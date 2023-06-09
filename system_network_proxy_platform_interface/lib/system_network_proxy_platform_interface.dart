@@ -17,8 +17,7 @@ abstract class SystemNetworkProxyPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static SystemNetworkProxyPlatform _instance =
-      MethodChannelSystemNetworkProxy();
+  static SystemNetworkProxyPlatform _instance = MethodChannelSystemNetworkProxy();
 
   /// The default instance of [SystemNetworkProxyPlatform] to use.
   ///
@@ -27,7 +26,7 @@ abstract class SystemNetworkProxyPlatform extends PlatformInterface {
 
   /// Platform-specific plugins should set this with their own platform-specific
   /// class that extends [SystemNetworkProxyPlatform] when they register themselves.
-  // TODO(amirh): Extract common platform interface logic.
+  // TODO: Extract common platform interface logic.
   // https://github.com/flutter/flutter/issues/43368
   static set instance(SystemNetworkProxyPlatform instance) {
     PlatformInterface.verifyToken(instance, _token);

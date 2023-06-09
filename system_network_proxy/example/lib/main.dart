@@ -49,11 +49,11 @@ class _MyAppState extends State<MyApp> {
                   width: double.infinity,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: RaisedButton(
+                    child: TextButton(
                       child: Text('getProxyEnable'),
                       onPressed: () async {
                         var proxyEnable = await SystemNetworkProxy.getProxyEnable();
-                        scaffoldMessengerKey.currentState.showSnackBar(SnackBar(
+                        scaffoldMessengerKey.currentState!.showSnackBar(SnackBar(
                           content: Text('getProxyEnable: $proxyEnable'),
                         ));
                       },
@@ -64,11 +64,11 @@ class _MyAppState extends State<MyApp> {
                   width: double.infinity,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: RaisedButton(
+                    child: TextButton(
                       child: Text('getProxyServer'),
                       onPressed: () async {
                         var proxyServer = await SystemNetworkProxy.getProxyServer();
-                        scaffoldMessengerKey.currentState.showSnackBar(SnackBar(
+                        scaffoldMessengerKey.currentState!.showSnackBar(SnackBar(
                           content: Text('getProxyServer: $proxyServer'),
                         ));
                       },
@@ -79,12 +79,11 @@ class _MyAppState extends State<MyApp> {
                   width: double.infinity,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: RaisedButton(
+                    child: TextButton(
                       child: Text('setProxyEnable'),
                       onPressed: () async {
-                        var result =
-                            await SystemNetworkProxy.setProxyEnable(!(await SystemNetworkProxy.getProxyEnable()));
-                        scaffoldMessengerKey.currentState.showSnackBar(SnackBar(
+                        var result = await SystemNetworkProxy.setProxyEnable(!(await SystemNetworkProxy.getProxyEnable()));
+                        scaffoldMessengerKey.currentState!.showSnackBar(SnackBar(
                           content: Text('setProxyEnable: $result'),
                         ));
                       },
@@ -95,11 +94,11 @@ class _MyAppState extends State<MyApp> {
                   width: double.infinity,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: RaisedButton(
+                    child: TextButton(
                       child: Text('setProxyServer'),
                       onPressed: () async {
                         var result = await SystemNetworkProxy.setProxyServer(proxyServerTextEditingController.text);
-                        scaffoldMessengerKey.currentState.showSnackBar(SnackBar(
+                        scaffoldMessengerKey.currentState!.showSnackBar(SnackBar(
                           content: Text('setProxyServer: $result'),
                         ));
                       },

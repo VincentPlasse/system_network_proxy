@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:flutter_web_plugins/flutter_web_plugins.dart';
 import 'package:system_network_proxy_platform_interface/system_network_proxy_platform_interface.dart';
