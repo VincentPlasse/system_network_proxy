@@ -25,7 +25,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace "com.example.myapp2"
+    namespace "com.liudonghua.system_network_proxy"
     compileSdkVersion 33
 
     sourceSets {
