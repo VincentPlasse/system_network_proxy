@@ -5,6 +5,10 @@ import 'package:system_network_proxy_platform_interface/system_network_proxy_pla
 class SystemNetworkProxyLinux extends SystemNetworkProxyPlatform {
   static SystemNetworkProxyLinux instance = SystemNetworkProxyLinux();
 
+  static void registerWith() {
+    SystemNetworkProxyPlatform.instance = SystemNetworkProxyLinux();
+  }
+
   static normalizeOutput(String output) {
     return output.trim().replaceAll("'", "");
     // return RegExp(r"^\s*'(?<content>\w+)'\s*$").firstMatch(output)?.namedGroup('content');

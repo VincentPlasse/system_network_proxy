@@ -6,6 +6,10 @@ import 'package:system_network_proxy_platform_interface/system_network_proxy_pla
 class SystemNetworkProxyWindows extends SystemNetworkProxyPlatform {
   static SystemNetworkProxyWindows instance = SystemNetworkProxyWindows();
 
+  static void registerWith() {
+    SystemNetworkProxyPlatform.instance = SystemNetworkProxyWindows();
+  }
+
   /// Returns `true` if this platform is able to getProxyEnable.
   @override
   Future<bool> getProxyEnable() async {
@@ -17,8 +21,7 @@ class SystemNetworkProxyWindows extends SystemNetworkProxyPlatform {
         'ProxyEnable',
       ]);
       print('get proxyEnable, exitCode: ${results.exitCode}, stdout: ${results.stdout}');
-      var proxyEnableLine =
-          (results.stdout as String).split('\r\n').where((item) => item.contains('ProxyEnable')).first;
+      var proxyEnableLine = (results.stdout as String).split('\r\n').where((item) => item.contains('ProxyEnable')).first;
       return proxyEnableLine.substring(proxyEnableLine.length - 1) == '1';
     } catch (e) {
       print(e);
@@ -60,8 +63,7 @@ class SystemNetworkProxyWindows extends SystemNetworkProxyPlatform {
         'ProxyServer',
       ]);
       print('get proxyServer, exitCode: ${results.exitCode}, stdout: ${results.stdout}');
-      var proxyServerLine =
-          (results.stdout as String).split('\r\n').where((item) => item.contains('ProxyServer')).first;
+      var proxyServerLine = (results.stdout as String).split('\r\n').where((item) => item.contains('ProxyServer')).first;
       var proxyServerLineSplits = proxyServerLine.split(RegExp(r"\s+"));
       return proxyServerLineSplits[proxyServerLineSplits.length - 1];
     } catch (e) {
