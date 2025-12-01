@@ -1,21 +1,20 @@
 name: system_network_proxy_platform_interface
 description: It's a simple utility of system network proxy which can get and set status of proxy, details of proxy.
 version: 1.0.2
-homepage: https://github.com/liudonghua123/system_network_proxy
-publish_to: https://pub.dartlang.org
+publish_to: none
 
 environment:
-  sdk: '>=2.19.0 <3.0.0'
-  flutter: ">=1.20.0"
+  sdk: ">=3.3.0 <4.0.0"
+  flutter: ">=3.22.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  meta: ^1.0.5
-  plugin_platform_interface: ^2.1.2
+  meta: ^1.17.0
+  plugin_platform_interface: ^2.1.8
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mockito: ^5.2.0
+  mockito: ^5.6.1
   
